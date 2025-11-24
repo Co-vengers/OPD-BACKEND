@@ -32,6 +32,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def health_check():
+    return {"status": "ok", "service": "Plum Adjudicator Backend"}
+
 @app.get("/api/claims")
 def get_claims_history(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     return db.query(models.Claim).order_by(models.Claim.created_at.desc()).offset(skip).limit(limit).all()
