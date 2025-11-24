@@ -31,6 +31,8 @@ def extract_claim_data(image_bytes: bytes, mime_type: str) -> dict:
         "is_handwritten": bool,
         "confidence_score": float # 0.0 to 1.0 based on clarity/legibility
     }
+    CRITICAL: Evaluate "medical_necessity_check". 
+    If the medicines/tests do not match the diagnosis (e.g., "Cast" for "Fever", or "Whitening" for "Cavity"), set to "FAIL".
     """
     
     try:

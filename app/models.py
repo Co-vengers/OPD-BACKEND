@@ -16,10 +16,11 @@ class Claim(Base):
     approved_amount = Column(Float)
     
     # Decisions
-    status = Column(String)  # APPROVED, REJECTED, PARTIAL, MANUAL_REVIEW
+    status = Column(String)
     confidence_score = Column(Float)
-    rejection_reasons = Column(JSON) # Store list of strings
+    rejection_reasons = Column(JSON)
     
     # Meta
-    extracted_data = Column(JSON) # Full raw extraction
+    extracted_data = Column(JSON)
+    file_path = Column(String)  # <--- NEW FIELD
     created_at = Column(DateTime, default=datetime.utcnow)
