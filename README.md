@@ -41,7 +41,7 @@ PORT=10000
 ## Local setup & run (venv)
 macOS / Linux:
 ```bash
-cd /Users/vyomrohila/Documents/coding/OCR_Adjudicator/Backend
+cd /Backend
 
 # Create and activate virtualenv
 python3 -m venv .venv
